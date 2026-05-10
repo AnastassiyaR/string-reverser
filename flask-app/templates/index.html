@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Reverser</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h1>🔄 String Reverser</h1>
+        <p class="subtitle">Powered by <code>transformations-anrozk</code> from test.pypi.org</p>
+        <form method="POST">
+            <label for="input_str">✏️ Input</label>
+            <input
+                type="text"
+                id="input_str"
+                name="input_str"
+                placeholder="Type something... (e.g. hello)"
+                value="{{ input_str }}"
+                autofocus
+            >
+            <button type="submit">⇄ Reverse string</button>
+            <br>
+            <label>📤 Output</label>
+            {% if result is not none %}
+                <div class="output-box">{{ result }}</div>
+            {% else %}
+                <div class="output-box empty">Result will appear here...</div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
